@@ -16,7 +16,7 @@ const Myheader = () => {
   return (
     <div className="container kapsayici text-center mt-4">
       <header>
-        <h1>Task Tracker</h1>
+        <h1 className="page-baslik">Task Tracker</h1>
         <button className="header-btn btn btn-success" onClick={showFunction}>
           {btnYazi}
         </button>

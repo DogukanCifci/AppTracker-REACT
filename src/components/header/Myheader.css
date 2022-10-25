@@ -1,5 +1,13 @@
 .kapsayici {
   background-color: rgb(160, 140, 140);
-
   width: 75%;
+}
+
+.header-btn {
+  margin: 20px 0 10px 0;
+}
+
+.page-baslik {
+  padding-top: 20px;
+  color: rgb(22, 43, 163);
 }
