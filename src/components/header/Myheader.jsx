@@ -4,7 +4,7 @@ import "./Myheader.css";
 
 const Myheader = () => {
   const [show, setShow] = useState(true);
-  const [btnYazi, setBtnYazi] = useState("Show Add Taskbar");
+  const [btnYazi, setBtnYazi] = useState("Close Add Taskbar");
   const showFunction = () => {
     setShow(!show);
     if (!show) {

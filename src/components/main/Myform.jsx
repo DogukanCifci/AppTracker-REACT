@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "./Myform.css";
 
 const Myform = () => {
+  const [taskName, setTaskName] = useState("");
+  const [date, setDate] = useState("");
+  console.log(taskName);
+  console.log(date);
   return (
     <div className="container form-part text-start">
       <form>
@@ -11,6 +16,7 @@ const Myform = () => {
             className="form-control"
             id="task"
             placeholder="Add Task"
+            onChange={(e) => setTaskName(e.target.value)}
           />
         </div>
         <div className="form-group">
@@ -20,6 +26,7 @@ const Myform = () => {
             className="form-control"
             id="date"
             placeholder="Add date"
+            onChange={(e) => setDate(e.target.value)}
           />
         </div>
         <div className="button-submit">
