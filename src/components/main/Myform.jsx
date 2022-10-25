@@ -22,7 +22,7 @@ const Myform = () => {
         <div className="form-group">
           <label htmlFor="date">Date</label>
           <input
-            type="date"
+            type="datetime-local"
             className="form-control"
             id="date"
             placeholder="Add date"
@@ -31,7 +31,7 @@ const Myform = () => {
         </div>
         <div className="button-submit">
           <button type="submit" className="btn submit-button btn-primary">
-            Submit
+            SAVE TASK
           </button>
         </div>
       </form>

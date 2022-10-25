@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Myform from "../main/Myform";
+import Task from "../task/Task";
 import "./Myheader.css";
 
 const Myheader = () => {
@@ -23,6 +24,9 @@ const Myheader = () => {
       </header>
 
       {show && <Myform />}
+      <div className="task-part">
+        <Task />
+      </div>
     </div>
   );
 };

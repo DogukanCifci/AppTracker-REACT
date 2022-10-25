@@ -1,6 +1,6 @@
 .kapsayici {
   background-color: rgb(160, 140, 140);
-  width: 75%;
+  width: 65%;
 }
 
 .header-btn {
@@ -11,3 +11,7 @@
   padding-top: 20px;
   color: rgb(22, 43, 163);
 }
+
+/* .task-part { 
+  border: 1px solid red;
+} */
