@@ -1,13 +1,12 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import Myheader from "./components/header/Myheader";
+import React from "react";
 import "./App.css";
-
-function App() {
+import Home from "./pages/Home";
+const App = () => {
   return (
-    <div>
-      <Myheader />
+    <div className="container">
+      <Home />
     </div>
   );
-}
+};
 
 export default App;
