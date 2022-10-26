@@ -5,22 +5,30 @@ const GorevEkle = ({ görevler, setGörevler }) => {
 
   const [text, setText] = useState("");
   const [date, setDate] = useState("");
-  console.log(text);
-  console.log(date);
+  /*  console.log(text);
+  console.log(date); */
 
   const yapSubmit = (event) => {
     event.preventDefault();
+
     //[] nerde olduguna dikkat et
+    // ...görevleri en sona yazdim. Ekledigim elemanin ilk gözüküp eski listenin asagiya eklenmesi icin
     setGörevler([
-      ...görevler,
       {
         id: görevler.length + 1,
         text: text, //setText ile asagida güncelledigim icin burada da otomatik olarak gözükecektir
         day: date, //setDate ile asagida güncelledigim icin burada da otomatik olarak gözükecektir
         bittiMi: false,
       },
+      ...görevler,
     ]);
+
+    //Olay olduktan sonra ic tarafi tekrar bosaltilsin diye yaptik bunu
+    setText("");
+    setDate("");
+    //yapSubmit function bitisi
   };
+
   return (
     <div>
       <form onSubmit={yapSubmit}>
