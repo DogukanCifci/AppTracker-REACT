@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const GorevEkle = ({ görevler, setGörevler }) => {
-  //console.log("asd", görevler); //6 elemenali dizimiz
+const GorevEkle = ({ gorevler, setGorevler }) => {
+  //console.log("asd", gorevler); //6 elemenali dizimiz
 
   const [text, setText] = useState("");
   const [date, setDate] = useState("");
@@ -11,16 +11,17 @@ const GorevEkle = ({ görevler, setGörevler }) => {
   const yapSubmit = (event) => {
     event.preventDefault();
 
-    //[] nerde olduguna dikkat et
-    // ...görevleri en sona yazdim. Ekledigim elemanin ilk gözüküp eski listenin asagiya eklenmesi icin
-    setGörevler([
+    //[] nerde olduguna dikkat et.GörevleriGöster.jsxte görevler icinde map ile gezececegimiz icin görevlerin bir dizi icinde olmasi lazim. Yeni eleman eklendikten sonra da olusacak Object [] ile diziye dönüstürülür.
+
+    // ...gorevleri en sona yazdim. Ekledigim elemanin ilk gözüküp eski listenin asagiya eklenmesi icin
+    setGorevler([
       {
-        id: görevler.length + 1,
+        id: gorevler.length + 1,
         text: text, //setText ile asagida güncelledigim icin burada da otomatik olarak gözükecektir
         day: date, //setDate ile asagida güncelledigim icin burada da otomatik olarak gözükecektir
         bittiMi: false,
       },
-      ...görevler,
+      ...gorevler,
     ]);
 
     //Olay olduktan sonra ic tarafi tekrar bosaltilsin diye yaptik bunu

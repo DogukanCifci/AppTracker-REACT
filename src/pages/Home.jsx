@@ -4,10 +4,10 @@ import { useState } from "react";
 import Data from "../helper/Data";
 
 const Home = () => {
-  const [görevler, setGörevler] = useState(Data);
-  console.log(görevler);
-  //const [görevler, setGörevler] = useState([]);
-  //setGörevler(data); //---->Böyle yaparsam sonusz döngüye girer. Girmemesi icin useEffect kullanmak zorunda kalirdim.
+  const [gorevler, setGorevler] = useState(Data);
+  console.log(gorevler);
+  //const [gorevler, setGorevler] = useState([]);
+  //setGorevler(data); //---->Böyle yaparsam sonusz döngüye girer. Girmemesi icin useEffect kullanmak zorunda kalirdim.
 
   //Buton özelliklerini burda tanimliyoruz.Böylece icerdeki yaziyi da rengi de onClick ile degistirebiliyorum
   //Burda butona true verip daha sonra background eger truysa su olsun ya da yazi eger buton trueysa icerdeki yazi söyle olsun falan da diyebilirdik.
@@ -15,8 +15,9 @@ const Home = () => {
     renk: "red",
     yazi: "CLOSE ADD TASKBAR",
   });
+
   return (
-    <div className="yavasGel">
+    <div>
       <header className="header">
         <h1>TASK TRACKER</h1>
         <button
@@ -38,10 +39,10 @@ const Home = () => {
       </header>
 
       {/* Eger gözükmediginde baska yazi eklemyecek olsaydim su sekilde de yazabilirdim ; (&& ile)
-button.renk === "red" && <GorevEkle görevler={görevler} setGörevler={setGörevler} /> */}
+button.renk === "red" && <GorevEkle gorevler={gorevler} setGorevler={setGorevler} /> */}
 
       {button.renk === "red" ? (
-        <GorevEkle görevler={görevler} setGörevler={setGörevler} />
+        <GorevEkle gorevler={gorevler} setGorevler={setGorevler} />
       ) : (
         <p
           className="text-center"
@@ -55,7 +56,7 @@ button.renk === "red" && <GorevEkle görevler={görevler} setGörevler={setGöre
         </p>
       )}
 
-      <GorevleriGoster görevler={görevler} setGörevler={setGörevler} />
+      <GorevleriGoster gorevler={gorevler} setGorevler={setGorevler} />
     </div>
   );
 };
