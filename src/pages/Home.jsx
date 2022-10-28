@@ -6,6 +6,7 @@ import Data from "../helper/Data";
 const Home = () => {
   const [gorevler, setGorevler] = useState(Data);
   console.log(gorevler);
+  console.log(gorevler.length);
   //const [gorevler, setGorevler] = useState([]);
   //setGorevler(data); //---->Böyle yaparsam sonusz döngüye girer. Girmemesi icin useEffect kullanmak zorunda kalirdim.
 
@@ -56,7 +57,13 @@ button.renk === "red" && <GorevEkle gorevler={gorevler} setGorevler={setGorevler
         </p>
       )}
 
-      <GorevleriGoster gorevler={gorevler} setGorevler={setGorevler} />
+      <div>
+        {gorevler.length === 0 ? (
+          <p className="notask text-center">There is nothing to show</p>
+        ) : (
+          <GorevleriGoster gorevler={gorevler} setGorevler={setGorevler} />
+        )}
+      </div>
     </div>
   );
 };
