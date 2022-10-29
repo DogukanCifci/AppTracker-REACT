@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 const GorevEkle = ({ gorevler, setGorevler }) => {
   //console.log("asd", gorevler); //6 elemenali dizimiz
-
+  let maxId = 0;
+  gorevler.map((e) => (e.id > maxId ? (maxId = e.id) : maxId));
   const [text, setText] = useState("");
   const [date, setDate] = useState("");
+
   /*  console.log(text);
   console.log(date); */
 
@@ -16,7 +18,7 @@ const GorevEkle = ({ gorevler, setGorevler }) => {
     // ...gorevleri en sona yazdim. Ekledigim elemanin ilk gözüküp eski listenin asagiya eklenmesi icin
     setGorevler([
       {
-        id: gorevler.length + 1,
+        id: maxId + 1,
         text: text, //setText ile asagida güncelledigim icin burada da otomatik olarak gözükecektir
         day: date, //setDate ile asagida güncelledigim icin burada da otomatik olarak gözükecektir
         bittiMi: false,
